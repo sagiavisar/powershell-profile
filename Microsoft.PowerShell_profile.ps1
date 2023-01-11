@@ -1,12 +1,6 @@
-# "posh-git " examples of what you can configure:
-Import-Module posh-git
-$GitPromptSettings.DefaultPromptPrefix = "({git_branch})"
-$GitPromptSettings.DefaultPromptSuffix = " $ "
-
-
 # Import Terminal Icons
 Import-Module -Name Terminal-Icons
-
+ 
 # Find out if the current user identity is elevated (has admin rights)
 $identity = [Security.Principal.WindowsIdentity]::GetCurrent()
 $principal = New-Object Security.Principal.WindowsPrincipal $identity
@@ -211,14 +205,14 @@ function pgrep($name) {
 
 
 ## Final Line to set prompt
-oh-my-posh init pwsh --config ~/jandedobbeleer.omp.json | Invoke-Expression
+#oh-my-posh init pwsh --config ~/jandedobbeleer.omp.json | Invoke-Expression
 
 # Import the Chocolatey Profile that contains the necessary code to enable
 # tab-completions to function for `choco`.
 # Be aware that if you are missing these lines from your profile, tab completion
 # for `choco` will not function.
 # See https://ch0.co/tab-completion for details.
-$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
-if (Test-Path($ChocolateyProfile)) {
-    Import-Module "$ChocolateyProfile"
-}
+# $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+# if (Test-Path($ChocolateyProfile)) {
+#     Import-Module "$ChocolateyProfile"
+# }
